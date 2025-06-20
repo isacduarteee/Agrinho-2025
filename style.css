@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap');
+
+:root {
+  --laranja: #FF6F00;
+  --verde-limao: #D4FF00;
+  --azul-escuro: #001f3f;
+  --vermelho-vivo: #FF1744;
+  --fundo-gradiente: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  --fonte-titulo: 'Bebas Neue', cursive;
+  --fonte-texto: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  background: var(--fundo-gradiente);
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  color: #ffffff;
+}
+
+main, footer, section {
+  background: transparent;
+}
+
+@keyframes fundoAnimado {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+header {
+  background: linear-gradient(to right, var(--laranja), var(--verde-limao));
+  color: #000;
+  text-align: center;
+  padding: 30px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: fadeSlideDown 1s ease-out;
+  position: relative;
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 3rem;
+  letter-spacing: 2px;
+  animation: brilho 3s infinite linear;
+}
+
+@keyframes brilho {
+  0% { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
+  50% { text-shadow: 0 0 20px rgba(255,255,255,0.8); }
+  100% { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  margin-top: 15px;
+}
+
+nav a {
+  background: #ffffff20;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+nav a:hover {
+  background: var(--vermelho-vivo);
+  color: white;
+  transform: scale(1.1);
+}
+
+.conteudo {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 2.8rem;
+  color: var(--verde-limao);
+  margin-bottom: 30px;
+  position: relative;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--vermelho-vivo);
+  border-radius: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #ffffff10;
+  border: 2px solid #ffffff30;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+}
+
+.card:hover::after {
+  left: 150%;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.2);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
+  color: var(--verde-limao);
+}
+
+.card p {
+  color: #ddd;
+  margin: 10px 0 20px;
+}
+
+.botao-acao {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--vermelho-vivo);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+  position: relative;
+}
+
+.botao-acao::after {
+  content: "➡️";
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.botao-acao:hover::after {
+  transform: translateX(4px);
+}
+
+.botao-acao:hover {
+  background: var(--verde-limao);
+  color: black;
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% {box-shadow: 0 0 0 0 rgba(255,23,68, 0.5);}
+  70% {box-shadow: 0 0 0 10px rgba(255,23,68, 0);}
+  100% {box-shadow: 0 0 0 0 rgba(255,23,68, 0);}
+}
+
+.hero {
+  background: url('hero-bg.jpg') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.hero-content {
+  color: white;
+  max-width: 700px;
+}
+
+.hero h2 {
+  font-family: var(--fonte-titulo);
+  font-size: 4rem;
+  color: var(--verde-limao);
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  animation: fadeInUp 1.3s ease-out;
+}
+
+.botao-acao.grande {
+  font-size: 1.2rem;
+  padding: 16px 32px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* BUSCA */
+#campo-busca {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 20px;
+  border: 2px solid var(--verde-limao);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  margin: 0 auto 40px;
+  display: block;
+  background: #ffffff10;
+  color: white;
+}
+
+#campo-busca::placeholder {
+  color: #ccc;
+}
+
+footer {
+  background: #000;
+  color: var(--verde-limao);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+.img-loja {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.img-loja:hover {
+  transform: scale(1.03);
+}
+
+.info {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.redes {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 15px 0;
+}
+
+.redes a {
+  color: var(--verde-limao);
+  font-weight: bold;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.redes a:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+.mapa {
+  margin-top: 25px;
+  border-radius: 12px;
+  overflow: hidden;
+}

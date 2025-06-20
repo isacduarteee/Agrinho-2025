@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colheitadeira Ideal - AgroMáquinas</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .produto-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 40px;
+    }
+
+    .galeria-produto {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+
+    .galeria-produto img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .detalhes-produto {
+      flex: 1 1 300px;
+      background: #ffffff10;
+      padding: 20px;
+      border-radius: 16px;
+      border: 2px solid #ffffff30;
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+
+    .detalhes-produto h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: var(--verde-limao);
+    }
+
+    .detalhes-produto p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+
+    .botao-acao {
+      margin-top: 15px;
+      display: inline-block;
+    }
+
+    .card-tecnico {
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card-tecnico h3 {
+      color: var(--verde-limao);
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .linha-dado {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .linha-dado:last-child {
+      border-bottom: none;
+    }
+
+    .dado-nome {
+      color: #eee;
+      font-weight: 600;
+    }
+
+    .dado-valor {
+      color: #ccc;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚜 AgroMáquinas</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Página Inicial</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="conteudo">
+    <div class="produto-container">
+
+      <!-- Galeria -->
+      <div class="galeria-produto">
+        <img src="colheitadeira-ideal.jpg" alt="Colheitadeira Ideal">
+      </div>
+
+      <!-- Detalhes -->
+      <div class="detalhes-produto">
+        <h2>Colheitadeira Ideal</h2>
+        <p><strong>Preço:</strong> R$ 4.500.000,00</p>
+        <p>Alta tecnologia e desempenho excepcional.</p>
+
+        <a class="botao-acao" href="https://wa.me/5542984437778?text=Olá!%20Tenho%20interesse%20na%20Colheitadeira%20Ideal">💬 Falar no WhatsApp</a>
+
+        <!-- Card técnico -->
+        <div class="card-tecnico">
+          <h3>Resumo Técnico</h3>
+
+          <div class="linha-dado">
+            <span class="dado-nome">Marca:</span>
+            <span class="dado-valor">Fendt</span>
+          </div>
+          <div class="linha-dado">
+            <span class="dado-nome">Modelo:</span>
+            <span class="dado-valor">Ideal 9T</span>
+          </div>
+          <div class="linha-dado">
+            <span class="dado-nome">Sistema:</span>
+            <span class="dado-valor">Rotor único Helix</span>
+          </div>
+          <div class="linha-dado">
+            <span class="dado-nome">Capacidade do Graneleiro:</span>
+            <span class="dado-valor">17.100 L</span>
+          </div>
+          <div class="linha-dado">
+            <span class="dado-nome">Ano:</span>
+            <span class="dado-valor">2024</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AgroMáquinas – Conectando o campo à cidade</p>
+  </footer>
+</body>
+</html>
